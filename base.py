@@ -8,8 +8,8 @@ app = Flask(__name__)
 # Load the model and processor once during initialization
 def load_model():
     global processor, model, label_mapping
-    processor = Wav2Vec2Processor.from_pretrained("Non-playing-Character/emotion-speech")
-    model = Wav2Vec2ForSequenceClassification.from_pretrained("Non-playing-Character/emotion-speech")
+    processor = Wav2Vec2Processor.from_pretrained("Non-playing-Character/wav2vec-based-speech-emotion-detection-model")
+    model = Wav2Vec2ForSequenceClassification.from_pretrained("Non-playing-Character/wav2vec-based-speech-emotion-detection-model")
     model.eval()
     label_mapping = ["angry", "disgust", "fear", "happy", "neutral", "sad", "surprise"]
     print("Model loaded successfully")
